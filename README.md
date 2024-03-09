@@ -9,7 +9,6 @@ Welcome to the Signature Pad Website! This project provides a simple and intuiti
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Demo
@@ -30,31 +29,32 @@ Click on the image to see a live demo.
   
 - **Save Signature:** Once satisfied with their signature, users can save it as an image file by clicking the "Save Signature" button.
 
-Installation
+## Installation
+
 To run the Signature Pad Website locally, follow these steps:
 
-1.## Clone this repository:
+### 1.Clone this repository:
 
 git clone https://github.com/your-username/signature-pad-website.git
 
-2.## Navigate to the project directory:
+### 2.Navigate to the project directory:
 
 cd signature-pad-website
 
-3.## Open the index.html file in your web browser.
+### 3.Open the index.html file in your web browser.
 
 ## Usage
-1.# Drawing Signature:
+### 1.Drawing Signature:
 
 Use your mouse or touch input to draw your signature on the canvas.
-2.# Customization:
+### 2.Customization:
 
 Use the color picker to select your preferred marker color.
 Adjust the marker size using the input field as per your preference.
-3.# Clear Signature:
+### 3.Clear Signature:
 
 Click the "Clear Signature" button to erase your signature and start over.
-4.# Save Signature:
+### 4.Save Signature:
 
 Once satisfied with your signature, click the "Save Signature" button to download it as an image file.
 
