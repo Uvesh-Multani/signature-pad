@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 90px;
+}
+
+#signature-pad {
+    border: 3px solid #333;
+    background-color: #fff;
+    cursor: crosshair;
+    margin-bottom: 40px;
+    border-radius: 6px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+}
+
+.controls > * {
+    margin: 10px;
+}
+
+input[type="color"],
+input[type="number"],
+button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #959595;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 30px; 
+    height: auto; 
+}
+
+input[type="color"] {
+    padding: 11px 10px; 
+}
+
+input[type="color"]:focus,
+input[type="number"]:focus,
+button:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #959595;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #3d3d3d;
+}
+
+button:hover {
+    background-color: #3d3d3d;
+}
