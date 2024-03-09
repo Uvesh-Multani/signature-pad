@@ -33,13 +33,13 @@ Click on the image to see a live demo.
 To run the Signature Pad Website locally, follow these steps:
 
 ### 1.Clone this repository:
-'''bash
+```
 git clone https://github.com/your-username/signature-pad-website.git
-
+```
 ### 2.Navigate to the project directory:
-'''bash
+```
 cd signature-pad-website
-
+```
 ### 3.Open the index.html file in your web browser.
 
 ## Usage
@@ -59,6 +59,6 @@ Once satisfied with your signature, click the "Save Signature" button to downloa
 
 ## License
 This project is licensed under the MIT License.
-'''bash
+```bash
 This README continues from where the navigation part starts and provides detailed instructions on how to install and use the Signature Pad Website. Adjust the content as needed for your specific project.
-
+```
