@@ -16,7 +16,7 @@ Welcome to the Signature Pad Website! This project provides a simple and intuiti
 
 Here's a preview of the Signature Pad Website:
 
-[![Signature Pad Website Demo](demo.png)](https://example.com)
+[![Signature Pad Website Demo](image.png)](https://nagriksignature.netlify.app)
 
 Click on the image to see a live demo.
 
