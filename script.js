@@ -1,55 +1,59 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var canvas = document.getElementById('signature-pad');
-    var context = canvas.getContext('2d');
-    var clearButton = document.getElementById('clear-btn');
-    var saveButton = document.getElementById('save-btn');
-    var downloadLink = document.getElementById('download-link');
-    var colorPicker = document.getElementById('color-picker');
-    var markerSizeInput = document.getElementById('marker-size');
+const canvas = document.getElementById('signature-pad');
+const ctx = canvas.getContext('2d');
+let drawing = false;
 
-    // Set up canvas
-    context.lineCap = 'round';
-    context.lineJoin = 'round';
+// Event listeners for mouse events
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mousemove', draw);
 
-    var isDrawing = false;
-    var lastX = 0;
-    var lastY = 0;
+// Event listeners for touch events
+canvas.addEventListener('touchstart', startDrawing, false);
+canvas.addEventListener('touchend', stopDrawing, false);
+canvas.addEventListener('touchmove', draw, false);
 
-    // Functions
-    function startDrawing(e) {
-        isDrawing = true;
-        [lastX, lastY] = [e.offsetX, e.offsetY];
+function startDrawing(event) {
+    drawing = true;
+    draw(event);
+}
+
+function stopDrawing() {
+    drawing = false;
+    ctx.beginPath();
+}
+
+function draw(event) {
+    event.preventDefault();
+    if (!drawing) return;
+
+    ctx.lineWidth = document.getElementById('size-picker').value;
+    ctx.strokeStyle = document.getElementById('color-picker').value;
+    ctx.lineCap = 'round';
+
+    // Get the correct coordinates
+    let x, y;
+    if (event.type.startsWith('mouse')) {
+        x = event.clientX - canvas.offsetLeft;
+        y = event.clientY - canvas.offsetTop;
+    } else {
+        const touch = event.touches[0];
+        x = touch.clientX - canvas.offsetLeft;
+        y = touch.clientY - canvas.offsetTop;
     }
 
-    function draw(e) {
-        if (!isDrawing) return;
-        context.strokeStyle = colorPicker.value;
-        context.lineWidth = markerSizeInput.value;
-        context.beginPath();
-        context.moveTo(lastX, lastY);
-        context.lineTo(e.offsetX, e.offsetY);
-        context.stroke();
-        [lastX, lastY] = [e.offsetX, e.offsetY];
-    }
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+}
 
-    function endDrawing() {
-        isDrawing = false;
-    }
+document.getElementById('clear-btn').addEventListener('click', () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
 
-    function clearSignature() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-    }
-
-    function saveSignature() {
-        var signatureData = canvas.toDataURL(); // Save signature as base64 data
-        downloadLink.href = signatureData;
-    }
-
-    // Event listeners
-    canvas.addEventListener('mousedown', startDrawing);
-    canvas.addEventListener('mousemove', draw);
-    canvas.addEventListener('mouseup', endDrawing);
-    canvas.addEventListener('mouseout', endDrawing);
-    clearButton.addEventListener('click', clearSignature);
-    saveButton.addEventListener('click', saveSignature);
+document.getElementById('save-btn').addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.download = 'signature.png';
+    link.href = canvas.toDataURL();
+    link.click();
 });
