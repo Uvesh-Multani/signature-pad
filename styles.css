@@ -40,6 +40,7 @@ h1 {
 
 input[type="color"],
 input[type="number"],
+select,
 button {
     padding: 8px 16px;
     font-size: 14px;
@@ -59,6 +60,7 @@ input[type="color"] {
 
 input[type="color"]:focus,
 input[type="number"]:focus,
+select:focus,
 button:focus {
     outline: none;
 }
