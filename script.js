@@ -120,3 +120,4 @@ document.addEventListener('DOMContentLoaded', function() {
     clearButton.addEventListener('click', clearSignature);
     saveButton.addEventListener('click', saveSignature);
 });
+
