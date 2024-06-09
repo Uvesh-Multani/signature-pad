@@ -31,7 +31,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allow buttons to wrap */
+    flex-wrap: wrap;
 }
 
 .controls > * {
@@ -49,12 +49,12 @@ button {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
-    min-width: 30px; 
-    height: auto; 
+    min-width: 30px;
+    height: auto;
 }
 
 input[type="color"] {
-    padding: 11px 10px; 
+    padding: 11px 10px;
 }
 
 input[type="color"]:focus,
