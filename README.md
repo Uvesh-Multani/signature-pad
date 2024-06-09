@@ -34,13 +34,16 @@ To run the Signature Pad Website locally, follow these steps:
 
 ### 1.Clone this repository:
 ```
-git clone https://github.com/your-username/signature-pad.git
+git clone https://github.com/Uvesh-Multani/signature-pad.git
 ```
 ### 2.Navigate to the project directory:
 ```
 cd signature-pad
 ```
 ### 3.Open the index.html file in your web browser.
+```
+index.html
+```
 
 ## Usage
 ### 1.Drawing Signature:
